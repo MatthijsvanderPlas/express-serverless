@@ -9,11 +9,9 @@ router.get('/', (req, res) => {
   res.send('App is running...')
 })
 
-router.post('/', (req, res) => {
+router.post('/add', (req, res) => {
   res.send('Post added...')
 })
-
-
 
 app.use('/.netlify/functions/api', router)
 module.exports.handler = serverless(app)
