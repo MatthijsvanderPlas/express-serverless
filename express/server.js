@@ -3,7 +3,7 @@ const serverless = require('serverless-http')
 const app = express()
 const router = express.Router()
 
-app.use('./.netlify/functions/server', router)
+app.use('/.netlify/functions/server', router)
 app.use('/', router)
 
 router.get('/', (req, res) => {
@@ -19,4 +19,5 @@ app.get('/about', (req, res) => {
   res.status(200).send('About page')
 })
 
+module.exports = app
 module.exports.handler = serverless(app)
