@@ -1,6 +1,6 @@
 [build]
   functions="functions"
 
-[{redirects}]
+[[redirects]]
   from = "/"
   to = "/.netlify/functions/api"
