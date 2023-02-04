@@ -7,7 +7,9 @@ app.use('./.netlify/functions/server', router)
 app.use('/', router)
 
 router.get('/', (req, res) => {
-  res.status(200).send('Hello Serverless World!')
+  res.writeHead(200, { "content-type": "text/html" })
+  res.write('<h1>Up and running!</h1>')
+  res.end()
 })
 
 app.get('/about', (req, res) => {
